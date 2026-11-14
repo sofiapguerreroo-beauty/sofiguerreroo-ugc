@@ -1,21 +1,19 @@
 
-/* ===================================
-   SOFI GUERRERO - BEAUTY & UGC
-   =================================== */
+/* SOFI GUERRERO | BEAUTY & UGC */
 
 :root {
-  --background: #fff6f8;
-  --pink-light: #ffe5ed;
-  --pink-medium: #f3b6ca;
-  --pink-dark: #c76d8d;
-  --rose: #a95573;
-  --text: #4b3540;
+  --background: #FFF8FC;
+  --pink-light: #F9DCEB;
+  --pink-medium: #EFB7D3;
+  --pink-dark: #C76D8D;
+  --lilac: #DCCCF7;
+  --lilac-deep: #B99AE6;
+  --rose: #A95573;
+  --text: #4B3540;
   --muted: #927983;
-  --white: #ffffff;
-  --border: #f5dce5;
+  --white: #FFFFFF;
+  --border: #F5DCE5;
 }
-
-/* CONFIGURACIÓN GENERAL */
 
 * {
   margin: 0;
@@ -31,24 +29,23 @@ body {
   min-height: 100vh;
   font-family: "DM Sans", sans-serif;
   color: var(--text);
+  overflow-x: hidden;
 
   background:
     radial-gradient(
       circle at 10% 15%,
-      #ffe2ec 0%,
+      #FBE3EE 0%,
       transparent 35%
     ),
     radial-gradient(
       circle at 90% 85%,
-      #ffe9e5 0%,
+      #E9DDFC 0%,
       transparent 35%
     ),
     var(--background);
-
-  overflow-x: hidden;
 }
 
-/* DECORACIÓN DEL FONDO */
+/* FONDO */
 
 .background-decoration {
   position: fixed;
@@ -61,7 +58,7 @@ body {
 .decoration-one {
   width: 250px;
   height: 250px;
-  background: #ffd4e3;
+  background: #F9DCEB;
   top: -120px;
   right: -80px;
   opacity: 0.55;
@@ -70,13 +67,13 @@ body {
 .decoration-two {
   width: 230px;
   height: 230px;
-  background: #ffe0d8;
+  background: #DCCCF7;
   bottom: -100px;
   left: -90px;
   opacity: 0.5;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 
 .container {
   width: min(100% - 32px, 470px);
@@ -91,54 +88,35 @@ body {
   animation: fadeUp 0.7s ease both;
 }
 
-/* FOTOGRAFÍA */
-
 .avatar {
   position: relative;
-
   width: 125px;
   height: 125px;
-
   margin: 0 auto 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   border: 5px solid white;
   border-radius: 50%;
-
   background: white;
 
-  box-shadow:
-    0 8px 30px rgba(180, 91, 125, 0.17);
+  box-shadow: 0 8px 30px rgba(180, 91, 125, 0.17);
 }
 
 .profile-photo {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center 35%;
-
   border-radius: 50%;
 }
 
 .avatar-sparkle {
   position: absolute;
-
   right: -9px;
   top: 8px;
-
   color: var(--pink-dark);
   font-size: 25px;
-
-  z-index: 2;
 }
-
-/* INFORMACIÓN DEL PERFIL */
 
 .profile-label {
   font-size: 10px;
@@ -179,44 +157,112 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-
   margin-top: 18px;
   padding: 8px 15px;
 
   border: 1px solid var(--border);
   border-radius: 50px;
-
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255,0.7);
 
   font-size: 11px;
-  letter-spacing: 0.3px;
   color: var(--muted);
 }
 
-/* SEPARADOR */
+/* SEPARADORES */
 
 .section-heading {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin: 42px 0 24px;
+  margin: 40px 0 23px;
 }
 
 .section-heading span:nth-child(2) {
   font-size: 10px;
-  letter-spacing: 3px;
   font-weight: 700;
+  letter-spacing: 2.5px;
   color: var(--pink-dark);
   white-space: nowrap;
 }
 
 .line {
+  flex: 1;
   height: 1px;
   background: var(--pink-medium);
-  flex: 1;
 }
 
-/* BOTONES DE REDES SOCIALES */
+/* PORTAFOLIO DESTACADO */
+
+.portfolio-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 98px;
+  padding: 18px;
+
+  background: linear-gradient(
+    120deg,
+    #E3D6FB,
+    #F8E1EF
+  );
+
+  border: 1px solid #D7C2F1;
+  border-radius: 19px;
+
+  color: var(--text);
+  text-decoration: none;
+
+  box-shadow: 0 8px 24px rgba(143, 102, 184, 0.13);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.portfolio-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 13px 28px rgba(143, 102, 184, 0.22);
+}
+
+.portfolio-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: white;
+  color: #A077D0;
+  font-size: 22px;
+}
+
+.portfolio-content {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.portfolio-name {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.portfolio-description {
+  font-size: 11px;
+  color: #7D678B;
+  line-height: 1.4;
+}
+
+.portfolio-button > .fa-arrow-up-right-from-square {
+  color: #9E77C8;
+  font-size: 12px;
+}
+
+/* REDES SOCIALES */
 
 .links {
   display: flex;
@@ -228,90 +274,65 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-
   width: 100%;
   min-height: 86px;
   padding: 15px 19px;
 
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255,255,255,0.9);
   border: 1px solid var(--border);
   border-radius: 19px;
 
-  box-shadow:
-    0 5px 22px rgba(175, 90, 125, 0.055);
-
   text-decoration: none;
   color: var(--text);
+  box-shadow: 0 5px 22px rgba(175,90,125,0.055);
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
     border-color 0.25s ease;
-
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.social-link.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .social-link:hover {
   transform: translateY(-4px);
-
-  box-shadow:
-    0 12px 28px rgba(175, 90, 125, 0.14);
-
+  box-shadow: 0 12px 28px rgba(175,90,125,0.14);
   border-color: var(--pink-medium);
 }
-
-.social-link:active {
-  transform: scale(0.98);
-}
-
-/* ICONOS */
 
 .social-icon {
   width: 48px;
   height: 48px;
   min-width: 48px;
-
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  justify-content: center;
   border-radius: 15px;
   font-size: 22px;
 }
 
 .instagram .social-icon {
-  background: #fce5ee;
-  color: #c65c88;
+  background: #FCE5EE;
+  color: #C65C88;
 }
 
 .tiktok .social-icon {
-  background: #f0ebf4;
+  background: #F0EBF4;
   color: #504451;
 }
 
 .pinterest .social-icon {
-  background: #ffe8e8;
-  color: #c84b61;
+  background: #FFE8E8;
+  color: #C84B61;
 }
 
 .youtube .social-icon {
-  background: #ffebea;
-  color: #dd5555;
+  background: #FFEBEA;
+  color: #DD5555;
 }
 
-/* TEXTOS DE REDES */
-
 .social-content {
+  display: flex;
   flex: 1;
   min-width: 0;
-
-  display: flex;
   flex-direction: column;
   gap: 5px;
 }
@@ -328,73 +349,60 @@ body {
 }
 
 .arrow {
-  font-size: 12px;
   color: var(--pink-dark);
-  transition: transform 0.25s ease;
+  font-size: 12px;
 }
 
-.social-link:hover .arrow {
-  transform: translate(3px, -3px);
-}
-
-/* SECCIÓN DE CONTACTO */
+/* CONTACTO */
 
 .contact-section {
   margin-top: 40px;
   padding: 30px 22px;
-
   text-align: center;
 
   background: linear-gradient(
     145deg,
-    #ffe7ef,
-    #fff0f3
+    #FFE7EF,
+    #F4EAFF
   );
 
-  border: 1px solid #f5d4df;
+  border: 1px solid #F0D8EB;
   border-radius: 24px;
 }
 
 .contact-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2.5px;
   color: var(--rose);
 }
 
-.contact-title span {
-  color: var(--pink-dark);
-}
-
 .contact-description {
+  margin: 20px 0;
   font-size: 13px;
   line-height: 1.8;
-  margin: 17px 0 23px;
   color: var(--muted);
 }
 
-/* OPCIONES DE EMAIL */
+.contact-email {
+  margin: 20px 0 24px;
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.email-label {
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rose);
+}
 
 .email-options {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
-.email-label {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--rose);
-  margin-bottom: 3px;
-}
-
-/* BOTONES DE GMAIL Y OUTLOOK */
 
 .email-option {
   display: flex;
@@ -406,29 +414,23 @@ body {
   min-height: 54px;
   padding: 15px;
 
-  border-radius: 15px;
-
   background: white;
   border: 1px solid var(--pink-medium);
+  border-radius: 15px;
 
   text-decoration: none;
   color: var(--text);
-
   font-size: 14px;
   font-weight: 600;
 
   transition:
     background 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.25s ease;
 }
 
 .email-option:hover {
   background: var(--pink-light);
   transform: translateY(-3px);
-
-  box-shadow:
-    0 7px 18px rgba(169, 85, 115, 0.12);
 }
 
 .email-option i:first-child {
@@ -437,11 +439,9 @@ body {
 }
 
 .email-arrow {
-  font-size: 11px;
   color: var(--pink-dark);
+  font-size: 11px;
 }
-
-/* OTRAS APLICACIONES DE CORREO */
 
 .email-fallback {
   display: inline-flex;
@@ -450,16 +450,11 @@ body {
   gap: 8px;
 
   margin-top: 5px;
+  padding: 5px;
 
   font-size: 12px;
   color: var(--rose);
   text-decoration: underline;
-
-  padding: 5px;
-}
-
-.email-fallback:hover {
-  color: #914662;
 }
 
 /* PIE DE PÁGINA */
@@ -483,7 +478,7 @@ footer p {
 /* ACCESIBILIDAD */
 
 a:focus-visible {
-  outline: 3px solid var(--rose);
+  outline: 3px solid #A077D0;
   outline-offset: 4px;
 }
 
@@ -494,17 +489,26 @@ a:focus-visible {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* VERSIÓN PARA CELULARES */
+.portfolio-button,
+.social-link {
+  animation: fadeUp 0.55s ease both;
+}
+
+.portfolio-button { animation-delay: 0.15s; }
+.social-link:nth-child(1) { animation-delay: 0.25s; }
+.social-link:nth-child(2) { animation-delay: 0.35s; }
+.social-link:nth-child(3) { animation-delay: 0.45s; }
+.social-link:nth-child(4) { animation-delay: 0.55s; }
+
+/* CELULARES */
 
 @media (max-width: 480px) {
-
   .container {
     width: calc(100% - 36px);
     padding-top: 38px;
@@ -530,10 +534,6 @@ a:focus-visible {
     min-width: 44px;
   }
 
-  .social-description {
-    font-size: 10px;
-  }
-
   .contact-section {
     padding: 26px 17px;
   }
@@ -543,20 +543,14 @@ a:focus-visible {
   }
 }
 
-/* REDUCIR ANIMACIONES */
+/* MOVIMIENTO REDUCIDO */
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
-  }
-
-  .social-link {
-    opacity: 1;
-    transform: none;
   }
 }
