@@ -1,0 +1,562 @@
+
+/* ===================================
+   SOFI GUERRERO - BEAUTY & UGC
+   =================================== */
+
+:root {
+  --background: #fff6f8;
+  --pink-light: #ffe5ed;
+  --pink-medium: #f3b6ca;
+  --pink-dark: #c76d8d;
+  --rose: #a95573;
+  --text: #4b3540;
+  --muted: #927983;
+  --white: #ffffff;
+  --border: #f5dce5;
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      #ffe2ec 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      #ffe9e5 0%,
+      transparent 35%
+    ),
+    var(--background);
+
+  overflow-x: hidden;
+}
+
+/* DECORACIÓN DEL FONDO */
+
+.background-decoration {
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.decoration-one {
+  width: 250px;
+  height: 250px;
+  background: #ffd4e3;
+  top: -120px;
+  right: -80px;
+  opacity: 0.55;
+}
+
+.decoration-two {
+  width: 230px;
+  height: 230px;
+  background: #ffe0d8;
+  bottom: -100px;
+  left: -90px;
+  opacity: 0.5;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.container {
+  width: min(100% - 32px, 470px);
+  margin: 0 auto;
+  padding: 55px 0 35px;
+}
+
+/* PERFIL */
+
+.profile {
+  text-align: center;
+  animation: fadeUp 0.7s ease both;
+}
+
+/* FOTOGRAFÍA */
+
+.avatar {
+  position: relative;
+
+  width: 125px;
+  height: 125px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 5px solid white;
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 8px 30px rgba(180, 91, 125, 0.17);
+}
+
+.profile-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 35%;
+
+  border-radius: 50%;
+}
+
+.avatar-sparkle {
+  position: absolute;
+
+  right: -9px;
+  top: 8px;
+
+  color: var(--pink-dark);
+  font-size: 25px;
+
+  z-index: 2;
+}
+
+/* INFORMACIÓN DEL PERFIL */
+
+.profile-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--pink-dark);
+  margin-bottom: 12px;
+}
+
+.profile h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.heart {
+  color: var(--pink-dark);
+  margin-left: 7px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.username {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.bio {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 18px;
+  padding: 8px 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+}
+
+/* SEPARADOR */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 42px 0 24px;
+}
+
+.section-heading span:nth-child(2) {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--pink-dark);
+  white-space: nowrap;
+}
+
+.line {
+  height: 1px;
+  background: var(--pink-medium);
+  flex: 1;
+}
+
+/* BOTONES DE REDES SOCIALES */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  min-height: 86px;
+  padding: 15px 19px;
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 19px;
+
+  box-shadow:
+    0 5px 22px rgba(175, 90, 125, 0.055);
+
+  text-decoration: none;
+  color: var(--text);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.social-link.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(175, 90, 125, 0.14);
+
+  border-color: var(--pink-medium);
+}
+
+.social-link:active {
+  transform: scale(0.98);
+}
+
+/* ICONOS */
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+  font-size: 22px;
+}
+
+.instagram .social-icon {
+  background: #fce5ee;
+  color: #c65c88;
+}
+
+.tiktok .social-icon {
+  background: #f0ebf4;
+  color: #504451;
+}
+
+.pinterest .social-icon {
+  background: #ffe8e8;
+  color: #c84b61;
+}
+
+.youtube .social-icon {
+  background: #ffebea;
+  color: #dd5555;
+}
+
+/* TEXTOS DE REDES */
+
+.social-content {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.social-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.social-description {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.arrow {
+  font-size: 12px;
+  color: var(--pink-dark);
+  transition: transform 0.25s ease;
+}
+
+.social-link:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* SECCIÓN DE CONTACTO */
+
+.contact-section {
+  margin-top: 40px;
+  padding: 30px 22px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    #ffe7ef,
+    #fff0f3
+  );
+
+  border: 1px solid #f5d4df;
+  border-radius: 24px;
+}
+
+.contact-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--rose);
+}
+
+.contact-title span {
+  color: var(--pink-dark);
+}
+
+.contact-description {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 17px 0 23px;
+  color: var(--muted);
+}
+
+/* OPCIONES DE EMAIL */
+
+.email-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.email-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rose);
+  margin-bottom: 3px;
+}
+
+/* BOTONES DE GMAIL Y OUTLOOK */
+
+.email-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 54px;
+  padding: 15px;
+
+  border-radius: 15px;
+
+  background: white;
+  border: 1px solid var(--pink-medium);
+
+  text-decoration: none;
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.email-option:hover {
+  background: var(--pink-light);
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 7px 18px rgba(169, 85, 115, 0.12);
+}
+
+.email-option i:first-child {
+  color: var(--pink-dark);
+  font-size: 18px;
+}
+
+.email-arrow {
+  font-size: 11px;
+  color: var(--pink-dark);
+}
+
+/* OTRAS APLICACIONES DE CORREO */
+
+.email-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+  color: var(--rose);
+  text-decoration: underline;
+
+  padding: 5px;
+}
+
+.email-fallback:hover {
+  color: #914662;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+  text-align: center;
+  margin-top: 38px;
+}
+
+footer p {
+  font-size: 12px;
+  color: var(--rose);
+}
+
+.footer-year {
+  margin-top: 9px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* ACCESIBILIDAD */
+
+a:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 4px;
+}
+
+/* ANIMACIÓN */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* VERSIÓN PARA CELULARES */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: calc(100% - 36px);
+    padding-top: 38px;
+  }
+
+  .profile h1 {
+    font-size: 32px;
+  }
+
+  .avatar {
+    width: 115px;
+    height: 115px;
+  }
+
+  .social-link {
+    min-height: 80px;
+    padding: 13px 15px;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
+  .social-description {
+    font-size: 10px;
+  }
+
+  .contact-section {
+    padding: 26px 17px;
+  }
+
+  .email-option {
+    font-size: 13px;
+  }
+}
+
+/* REDUCIR ANIMACIONES */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .social-link {
+    opacity: 1;
+    transform: none;
+  }
+}
